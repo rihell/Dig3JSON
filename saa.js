@@ -25,20 +25,22 @@ fetch('https://api.openweathermap.org/data/2.5/weather?lang=fi&q=tampere&units=m
 // Funktio JSON-datan käsittelyyn
 function saa(data) {
     var teksti = ""; // Määritellään muuttuja, johon tulostettava tieto kerätään
-    
+
+    teksti += "<ul>"; //listan aloitus
     // Otsikkotiedon hakeminen ja sijoittaminen h1-elementtiin
-    teksti += "<h1>" + data.name + "</h1>";
+    teksti += "<li>Kaupunki:" + data.name + "</li>";
 
     // Säätilan kuvaus
-    teksti += "<p>Sää: " + data.weather[0].description + "</p>";
+    teksti += "<li>Sää: " + data.weather[0].description + "</li>";
 
     // Lämpötila ja tuulen nopeus
-    teksti += "<p>Lämpötila: " + data.main.temp + " &deg;C</p>";
-    teksti += "<p>Tuulen nopeus: " + data.wind.speed + " m/s</p>";
+    teksti += "<li>Lämpötila: " + data.main.temp + " &deg;C</li>";
+    teksti += "<li>Tuulen nopeus: " + data.wind.speed + " m/s</li>";
 
     // Säätilan kuvakuvan hakeminen
     var kuva = 'http://openweathermap.org/img/w/' + data.weather[0].icon + '.png';
     teksti += "<p><img src='" + kuva + "' alt='sääkuva' ></p>";
+    teksti += "</ul>"; //Päätetään lista
 
     // teksti-muuttujan sisällön tulostus
     document.getElementById("vastaus").innerHTML += teksti;
