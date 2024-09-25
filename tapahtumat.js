@@ -1,4 +1,4 @@
-fetch('https://api.visittampere.com/api/v1/visittampere/event/?format=json&limit=10')
+fetch('https://api.visittampere.com/api/v1/visittampere/article/all/?category=amusement_park&format=json&lang=fi')
 .then(function (response) {
     return response.json();  // Muunnetaan vastaus JSON-muotoon
 })
@@ -12,16 +12,12 @@ fetch('https://api.visittampere.com/api/v1/visittampere/event/?format=json&limit
 });
 
 function tapahtumat(data) {
-    var teksti = "<h1>Tampereella tapahtuu</h1>";
+    var teksti="";
+    teksti = "<h1>Tampereella tapahtuu</h1>";
     for (var i = 0; i < data.length; i++) {
-        // Tarkistetaan onko tapahtuman nimi ja kuvaus olemassa, ja näytetään ne
-        var nimi = data[i].name && data[i].name.fi ? data[i].name.fi : "Ei nimeä saatavilla";
-        var kuvaus = data[i].description && data[i].description.intro ? data[i].description.intro : "Ei kuvausta saatavilla";
-        var linkki = data[i].info_url ? data[i].info_url : "#";
-
-        teksti += "<h3>" + nimi + "</h3>";
-        teksti += "<p>" + kuvaus + "</p>";
-        teksti += "<p><a href='" + linkki + "'>Lisätiedot</a></p>";
+        teksti = teksti + "<h3>" + data[i].title + "</h3>";
+        teksti = teksti + "<p>" + data[i].description + "</p>";
+        teksti = teksti + "<p> <a href=" + data[i].url + ">" + data[i].url + "</a></p>";
     }
-    document.getElementById("vastaus").innerHTML = teksti;  // Tulostetaan data sivulle
+    document.getElementById("vastaus").innerHTML = teksti;
 }
