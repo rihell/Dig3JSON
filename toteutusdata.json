@@ -1,0 +1,20 @@
+{
+    "toteutus": {
+      "nimi": "Digitekniikat",
+      "osallistujat": {
+        "lukumäärä": 5,
+        "nimet": [
+          "Matti Meikäläinen",
+          "Maija Mallikas",
+          "Pekka Pouta",
+          "Sanna Saari",
+          "Janne Järvinen"
+        ]
+      },
+      "alkamisAika": "2024-08-19",
+      "loppumisAika": "2024-10-11",
+      "kestoViikoissa": 8,
+      "kuva": "kurssikuva.jpg"
+    }
+  }
+  
