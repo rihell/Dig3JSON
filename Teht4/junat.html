@@ -47,22 +47,25 @@
                         if (data[i].trainCategory == "Long-distance") {
 
                             // Saadaan lähtöasema (indeksi 0)
-                            var lahtoasema = data[i].timeTableRows[0].stationShortCode;
+                            var lahtoasema = "Helsingistä"; // Muutetaan HKI Helsingiksi
 
                             // Saadaan määränpää (viimeinen indeksi)
                             var vika = data[i].timeTableRows.length - 1;
-                            var maaranpaa = data[i].timeTableRows[vika].stationShortCode;
+                            var maaranpaa = "Tampereelle"; // Muutetaan TRE Tampereeksi
 
                             // Päivämäärän ja ajan käsittely
-                            var pvm = data[i].timeTableRows[j].scheduledTime;
-                            var aika = pvm.substr(0, 10) + " kello: " + pvm.substr(11, 5);
+                            var pvmLahdot = data[i].timeTableRows[0].scheduledTime; // Lähtöpäivämäärä
+                            var aikaLahdot = pvmLahdot.substr(0, 10) + " kello: " + pvmLahdot.substr(11, 5); // Lähtöaika
+
+                            var pvmSaapuu = data[i].timeTableRows[j].scheduledTime; // Saapumispäivämäärä
+                            var aikaSaapuu = pvmSaapuu.substr(0, 10) + " kello: " + pvmSaapuu.substr(11, 5); // Saapumisaika
 
                             // Luodaan HTML-esitys tiedoista
                             teksti += "<div class='juna-info'>";
-                            teksti += "<strong>Juna: </strong>" + data[i].trainType + " " + data[i].trainNumber + "<br>";
-                            teksti += "<strong>Lähtöasema: </strong>" + lahtoasema + "<br>";
-                            teksti += "<strong>Määränpää: </strong>" + maaranpaa + "<br>";
-                            teksti += "<strong>Lähtöaika Tampereelta: </strong>" + aika + "<br>";
+                            teksti += "<strong>Juna nro: " + data[i].trainNumber + "</strong><br>";  // Juna nro lihavoituna
+                            teksti += "Junan tyyppi: " + data[i].trainType + "<br>";  // Junatyyppi
+                            teksti += "Lähtee " + lahtoasema + " " + aikaLahdot + ". "; // Mistä juna lähtee ja aikaleima
+                            teksti += "Saapuu " + maaranpaa + " " + aikaSaapuu + "<br>"; // Mihin se saapuu ja aikaleima
                             teksti += "</div>";
                             teksti += "<hr>"; // Viiva junien väliin
                         }
