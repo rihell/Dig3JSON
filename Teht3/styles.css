@@ -1,38 +1,69 @@
-/* Yleiset tyylit */
-  body {
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  header {
-    margin-bottom: 20px;
-  }
-  /* Navigaation tyyli */
-  nav {
-    background-color: #333;
-    padding: 1em;
-  }
-  
+/* Perustyyli kaikille laitteille */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  background-color: #333;
+}
+
+nav ul li {
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  display: block;
+  padding: 14px 20px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  background-color: #111;
+}
+
+/* Otsikkotyyli */
+header h1 {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 36px;
+}
+
+/* Responsiivinen navigaatio pienille laitteille */
+@media (max-width: 768px) {
   nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+      flex-direction: column; /* Muuttaa navigoinnin pystysuuntaiseksi */
   }
-  
+
   nav ul li {
-    display: inline;
-    margin-right: 10px;
+      width: 100%; /* Asettaa linkit täyteen leveyteen pienemmillä näytöillä */
   }
-  
-  nav ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 14px 20px;
+
+  header h1 {
+      font-size: 24px; /* Pienempi fonttikoko pienillä näytöillä */
   }
-  
-  nav ul li a:hover {
-    background-color: #575757;
-  }
-  /*Luetteloiden asettelu */
+
   #vastaus {
-    display: flex;
+      padding: 10px;
   }
+}
+
+/* Responsiivisuus tableteille */
+@media (max-width: 1024px) {
+  header h1 {
+      font-size: 28px;
+  }
+
+  #vastaus {
+      padding: 15px;
+  }
+}
