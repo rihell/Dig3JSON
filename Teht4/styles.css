@@ -33,3 +33,32 @@ nav ul li a {
 nav ul li a:hover {
     background-color: #575757;
 }
+/* Responsiivinen navigaatio pienille laitteille */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Muuttaa navigoinnin pystysuuntaiseksi */
+    }
+  
+    nav ul li {
+        width: 100%; /* Asettaa linkit täyteen leveyteen pienemmillä näytöillä */
+    }
+  
+    header h1 {
+        font-size: 24px; /* Pienempi fonttikoko pienillä näytöillä */
+    }
+  
+    #vastaus {
+        padding: 10px;
+    }
+  }
+  
+  /* Responsiivisuus tableteille */
+  @media (max-width: 1024px) {
+    header h1 {
+        font-size: 28px;
+    }
+  
+    #vastaus {
+        padding: 15px;
+    }
+  }
