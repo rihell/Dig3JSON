@@ -7,12 +7,14 @@
     <link rel="stylesheet" href="styles.css"> <!--CSS-tiedoston linkitys-->
 </head>
 <body>
+    <!--Navi palkki-->
     <nav>
         <ul>
             <li><a href="liikennekamera.html">Liikennekamera</a></li>
             <li><a href="junat.html">Junat</a></li>
         </ul>
     </nav>
+    <!--Sivun otsikot-->
     <header>
         <h1>Mennäänkö junalla Tampereelle?</h1>
         <p>Kuinkahan usein junia menee?</p>
@@ -30,7 +32,7 @@
             naytaJunat(data);
         })
         .catch(error => {
-            document.getElementById("junat").innerHTML = "<p>Tietojen haku epäonnistui.</p>" + error;
+            document.getElementById("junat").innerHTML = "<p>Tietojen haku epäonnistui.</p>" + error; //Teksti, jos koodissa virhe
         });
 
         function naytaJunat(data) {
