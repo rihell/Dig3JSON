@@ -1,5 +1,5 @@
 // Hae toteutusdata GitHubista
-fetch('https://raw.githubusercontent.com/rihell/Digitekniikat-teht-3-JSON/master/toteutusdata.json')
+fetch('https://raw.githubusercontent.com/rihell/Dig3JSON/refs/heads/master/Teht%201-2/toteutusdata.json')
   .then(function (response) {
     return response.json();
   })

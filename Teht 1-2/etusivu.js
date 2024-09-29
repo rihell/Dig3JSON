@@ -1,5 +1,5 @@
 // Hae etusivudata GitHubista
-fetch('https://raw.githubusercontent.com/rihell/Digitekniikat-teht-3-JSON/master/etusivudata.json')
+fetch('https://raw.githubusercontent.com/rihell/Dig3JSON/refs/heads/master/Teht%201-2/etusivudata.json')
   .then(function (response) {
     return response.json();
   })
