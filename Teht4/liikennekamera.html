@@ -37,15 +37,15 @@
 
         function liikennekamera(data) {
             var teksti = "";
-    
+
             // Tarkistetaan, että data sisältää presets-taulukon
             if (data && data.presets && Array.isArray(data.presets)) {
             for (var i = 0; i < data.presets.length; i++) {
-                teksti += "<h3>Kamera ID: " + data.presets[i].id + "</h3>";
-                teksti += "<p>Mitattu aika: " + data.presets[i].measuredTime + "</p>";
+                teksti += "<h3>Kamera ID: " + data.presets[i].id + "</h3>"; //En saanut kuvia toimimaan
+                teksti += "<p>Mitattu aika: " + data.presets[i].measuredTime + "</p>";´//Mittausaika
             }
             } else {
-                teksti += "<p>Ei löydy kameradataa.</p>";
+                teksti += "<p>Ei löydy kameradataa.</p>"; //Virhekoodin teksti
             }
     
             document.getElementById("vastaus").innerHTML = teksti;
