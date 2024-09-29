@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Otsikko</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css"> <!--CSS-tiedoston linkitys-->
 </head>
 <body>
     <nav>
@@ -18,6 +18,7 @@
         <p>Kuinkahan usein junia menee?</p>
     </header>
     <div id="junat"></div>
+    <!--JavaScript koodi-->
     <script>
         // Haetaan Tampereen junat
         fetch('https://rata.digitraffic.fi/api/v1/live-trains/station/tpe?departing_trains=10&include_nonstopping=false')
@@ -35,9 +36,9 @@
         function naytaJunat(data) {
             var teksti = "";  // Tyhjä muuttuja, johon lisätään junatiedot
 
-            // Käydään läpi jokainen juna (data[i] viittaa yhteen junaan)
+            // Käydään läpi jokainen juna
             for (var i = 0; i < data.length; i++) {
-                // Käydään läpi aikataulutiedot (data[i].timeTableRows on taulukko)
+                // Käydään läpi aikataulutiedot
                 for (var j = 0; j < data[i].timeTableRows.length; j++) {
 
                     // Tarkistetaan, onko asema Tampere (TPE) ja onko kyseessä lähtö (DEPARTURE)
@@ -53,7 +54,7 @@
                             var vika = data[i].timeTableRows.length - 1;
                             var maaranpaa = "Tampereelle"; // Muutetaan TRE Tampereeksi
 
-                            // Päivämäärän ja ajan käsittely
+                            // Päivämäärä ja aika
                             var pvmLahdot = data[i].timeTableRows[0].scheduledTime; // Lähtöpäivämäärä
                             var aikaLahdot = pvmLahdot.substr(0, 10) + " kello: " + pvmLahdot.substr(11, 5); // Lähtöaika
 

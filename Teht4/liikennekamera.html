@@ -7,17 +7,20 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!--Navi palkki-->
     <nav>
         <ul>
             <li><a href="liikennekamera.html">Liikennekamera</a></li>
             <li><a href="junat.html">Junat</a></li>
         </ul>
     </nav>
+    <!--Sivun otsikot-->
     <header>
         <h1>Autolla Tampereelle</h1>
         <p>Millainen keli siellä on?</p>
     </header>
     <div id="vastaus"></div>
+    <!--JavaScript koodi-->
     <script>
         fetch('https://tie.digitraffic.fi/api/weathercam/v1/stations/C04507/data')
         .then(function (response) {
